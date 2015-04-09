@@ -9,7 +9,7 @@ This repository is a set of files and commands to quickly get a PHP app up and r
 - Download and install the [Heroku Toolbelt](https://toolbelt.heroku.com/)
 - Download and install [Composer](https://getcomposer.org/download/)
 
-### Getting up and running on Heroku
+### Getting Up and Running on Heroku
 
 The following steps will walk you through downloading this repo and executing the bootstrap script to automate the creation of a new PHP app on Heroku.
 
@@ -58,6 +58,7 @@ The `Procfile`, `.user.ini`, `nginx.conf`, and `composer.json` should all reside
 - Set logging in your app to STDOUT or STDERR. That way they'll be captured with Heroku's usual logging capabilities. [Papertrail](https://papertrailapp.com) is a great add-on that makes logging even better. Always avoid writing logs to the file system as they'll be very temporary.
 - Don't forget to add your environment variables in Heroku. That's an excellent place to store an API's secret key. Keep those out of your app and source control.
 - GitHub enforces rate limits for anonymous requests. If this occurs your Heroku deployments will become slower due to Composer being forced to use source-based installs. Heroku details a [workaround](https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens) to avoid this issue.
+- If your app requires a custom compilation step that should not be included in Composer's `post-install-cmd`, Heroku [explains](https://devcenter.heroku.com/articles/php-support#custom-compile-step) how to execute those tasks.
 
 ### License
 
