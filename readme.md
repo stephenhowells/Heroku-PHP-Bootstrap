@@ -13,7 +13,7 @@ This repository is a set of files and commands to quickly get a PHP app up and r
 
 The following steps will walk you through downloading this repo and executing the bootstrap script to automate the creation of a new PHP app on Heroku.
 
-**1. If you've never ran the Heroku CLI you'll need to authenticate, otherwise skip this step.**
+**1. If you've never ran the Heroku CLI you'll need to authenticate, otherwise skip this step:**
 
 ```bash
 $ heroku login
@@ -57,6 +57,7 @@ The `Procfile`, `.user.ini`, `nginx.conf`, and `composer.json` should all reside
 - If you've declared a specific runtime and/or extensions in your `composer.json` file that differ from your local development environment, Composer will throw an error during installing and updating. Often your Vagrant PHP runtime won't match what you'll use on Heroku. To avoid experiencing errors when using Composer locally add the `--ignore-platform-reqs` flag to your Composer commands. This tells Composer to simply ignore those PHP runtime dependencies.
 - Set logging in your app to STDOUT or STDERR. That way they'll be captured with Heroku's usual logging capabilities. [Papertrail](https://papertrailapp.com) is a great add-on that makes logging even better. Always avoid writing logs to the file system as they'll be very temporary.
 - Don't forget to add your environment variables in Heroku. That's an excellent place to store an API's secret key. Keep those out of your app and source control.
+- GitHub enforces rate limits for anonymous requests. If this occurs your Heroku deployments will become slower due to Composer being forced to use source-based installs. Heroku details a [workaround](https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens) to avoid this issue.
 
 ### License
 
