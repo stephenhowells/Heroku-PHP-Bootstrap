@@ -1,5 +1,7 @@
 # Heroku PHP Bootstrap
 
+[![Build Status](https://travis-ci.org/stephenhowells/Heroku-PHP-Bootstrap.svg)](https://travis-ci.org/stephenhowells/Heroku-PHP-Bootstrap)
+
 This repository is a set of files and commands to quickly get a PHP app up and running on Heroku. Simply customize the included files to fit your particular needs.
 
 ### Prerequisites
