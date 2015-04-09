@@ -28,7 +28,9 @@ chmod +x bootstrap.sh
 bash bootstrap.sh name-of-app
 ```
 
-You can view the results once the bootstrap script has finished by running `heroku open`. You'll see the placeholder page the you've just uploaded.
+You can view the results once the bootstrap script has finished by running `heroku open`. You'll see the placeholder page that you've just uploaded.
+
+If you need a MySQL database, provision the ClearDB add-on by running `heroku addons:add cleardb`. Their starter "Ignite" database is free of charge.
 
 ### Tips
 
