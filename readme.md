@@ -17,9 +17,9 @@ The `Procfile`, `.user.ini`, `nginx.conf`, and `composer.json` should all reside
 
 **nginx.conf**: Place all custom Nginx server configurations in this file. Customizations include what you'd normally see in a site's server block. The included example is intended for use with Laravel but may work with other PHP apps and frameworks.
 
-**.user.ini**: Specify any custom INI settings with modes of PHP_INI_PERDIR and PHP_INI_USER. A list of all the INI settings and their modes can be found [here](http://php.net/manual/en/ini.list.php). In instances where you need even more customization to the PHP environment you can create a custom FPM configuration. Heroku explains this scenario [here](https://devcenter.heroku.com/articles/custom-php-settings#php-fpm-configuration-include).
+**.user.ini**: Specify any custom INI settings with modes of PHP_INI_PERDIR and PHP_INI_USER. A list of all the INI settings and their modes can be found [here](http://php.net/manual/en/ini.list.php). In instances where you need even more customization to the PHP environment you can create a [custom FPM configuration](https://devcenter.heroku.com/articles/custom-php-settings#php-fpm-configuration-include).
 
-**composer.json**: Needs no introduction. In this repo's example it shows how to specify the PHP runtime and additional optional extensions. Heroku details how to tailor the PHP environment [here](https://devcenter.heroku.com/articles/php-support).
+**composer.json**: Needs no introduction. In this repo's example it shows how to specify the PHP runtime and additional optional extensions. Heroku details how to [tailor the PHP environment](https://devcenter.heroku.com/articles/php-support).
 
 **Finally, navigate to the project folder in your terminal and run:**
 
@@ -27,6 +27,8 @@ The `Procfile`, `.user.ini`, `nginx.conf`, and `composer.json` should all reside
 chmod +x bootstrap.sh
 bash bootstrap.sh name-of-app
 ```
+
+You can view the results once the bootstrap script has finished by running `heroku open`. You'll see the placeholder page the you've just uploaded.
 
 ### Tips
 
