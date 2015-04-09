@@ -11,6 +11,35 @@ This repository is a set of files and commands to quickly get a PHP app up and r
 
 ### Getting up and running on Heroku
 
+The following steps will walk you through downloading this repo and executing the bootstrap script to automate the creation of a new PHP app on Heroku.
+
+**1. If you've never ran the Heroku CLI you'll need to authenticate, otherwise skip this step.**
+
+```bash
+$ heroku login
+```
+
+**2. Launch a new PHP app on Heroku:**
+
+```bash
+# download the repo
+$ curl -LO https://github.com/stephenhowells/Heroku-PHP-Bootstrap/archive/master.zip
+
+# unzip and cd into the project folder
+$ unzip master.zip
+$ cd Heroku-PHP-Bootstrap-master/project 
+
+# make the bootstrap executable and run it, name your new app uniquely
+$ chmod +x bootstrap.sh
+$ bash bootstrap.sh name-of-app
+```
+
+You can view the results once the bootstrap script has finished by running `heroku open`. You'll see the placeholder landing page that you've just uploaded in your browser.
+
+If you need a MySQL database, provision the ClearDB add-on by running `heroku addons:add cleardb`. Their starter "Ignite" database is free of charge.
+
+### Included Files
+
 The `Procfile`, `.user.ini`, `nginx.conf`, and `composer.json` should all reside in the root of the project.
 
 **Procfile**: Tells Heroku you'd like to use the Nginx server and that it should include the customizations detailed in `nginx.conf`.
@@ -20,17 +49,6 @@ The `Procfile`, `.user.ini`, `nginx.conf`, and `composer.json` should all reside
 **.user.ini**: Specify any custom INI settings with modes of PHP_INI_PERDIR and PHP_INI_USER. A list of all the INI settings and their modes can be found [here](http://php.net/manual/en/ini.list.php). In instances where you need even more customization to the PHP environment you can create a [custom FPM configuration](https://devcenter.heroku.com/articles/custom-php-settings#php-fpm-configuration-include).
 
 **composer.json**: Needs no introduction. In this repo's example it shows how to specify the PHP runtime and additional optional extensions. Heroku details how to [tailor the PHP environment](https://devcenter.heroku.com/articles/php-support).
-
-**Finally, navigate to the project folder in your terminal and run:**
-
-```bash
-chmod +x bootstrap.sh
-bash bootstrap.sh name-of-app
-```
-
-You can view the results once the bootstrap script has finished by running `heroku open`. You'll see the placeholder page that you've just uploaded.
-
-If you need a MySQL database, provision the ClearDB add-on by running `heroku addons:add cleardb`. Their starter "Ignite" database is free of charge.
 
 ### Tips
 
